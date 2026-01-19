@@ -18,7 +18,6 @@ A comprehensive ELT (Extract-Load-Transform) data pipeline built with Apache Spa
 - [Data Quality and Edge Case Handling](#data-quality-and-edge-case-handling)
 - [How to Run](#how-to-run)
 - [Project Structure](#project-structure)
-- [Future Improvements](#future-improvements)
 
 ---
 
@@ -27,13 +26,45 @@ A comprehensive ELT (Extract-Load-Transform) data pipeline built with Apache Spa
 This pipeline follows the **Medallion Architecture** pattern (Bronze → Silver → Gold), enabling incremental data refinement and clear separation between raw ingestion, cleansing, and analytics-ready datasets.
 
 ```
-┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
-│   RAW (CSV)     │────▶│     BRONZE      │────▶│     SILVER      │────▶│      GOLD       │
-│                 │     │   (Parquet)     │     │   (Cleaned)     │     │  (Enriched)     │
-└─────────────────┘     └─────────────────┘     └─────────────────┘     └─────────────────┘
-  Dirty source           Schema-on-read          Deduplicated,           Feature-engineered,
-  files with             ingestion with          standardized,           analytics-ready
-  inconsistencies        type inference          FK-validated            with derived metrics
+┌─────────────────┐
+│   RAW (CSV)     │
+│                 │
+│ Dirty source    │
+│ files with      │
+│ inconsistencies │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│     BRONZE      │
+│   (Parquet)     │
+│                 │
+│ Schema-on-read  │
+│ ingestion with  │
+│ type inference  │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│     SILVER      │
+│   (Cleaned)     │
+│                 │
+│ Deduplicated,   │
+│ standardized,   │
+│ FK-validated    │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│      GOLD       │
+│  (Enriched)     │
+│                 │
+│ Feature-engineered,
+│ analytics-ready │
+│ derived metrics │
+└─────────────────┘
+
+
 ```
 
 ### Layer Responsibilities
@@ -250,7 +281,7 @@ profile_table(df, table_name, pk_col, cfk_cols, parent_dfs, pfk_cols)
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/AppleRetailDataPipeline.git
+git clone https://github.com/musaab-exe/apple-retail-data-pipeline.git
 cd AppleRetailDataPipeline
 
 # Create virtual environment
@@ -317,6 +348,7 @@ AppleRetailDataPipeline/
 ---
 
 ## Author
+**Musaab Mohammed**
 
 Built as a portfolio project demonstrating end-to-end data engineering capabilities including:
 
@@ -329,5 +361,3 @@ Built as a portfolio project demonstrating end-to-end data engineering capabilit
 ---
 
 *This project uses simulated data inspired by Apple's retail ecosystem. All data is synthetic and for demonstration purposes only.*
-#   a p p l e - r e t a i l - d a t a - p i p e l i n e  
- 
