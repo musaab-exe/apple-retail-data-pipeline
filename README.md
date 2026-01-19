@@ -1,6 +1,6 @@
 # Apple Retail Data Pipeline
 
-A comprehensive ELT (Extract-Load-Transform) data pipeline built with Apache Spark, simulating an end-to-end analytics solution for Apple retail operations. This project ingests dirty, real-world-like transactional data, applies rigorous data quality checks, and produces analytics-ready datasets that power business intelligence across sales performance, product lifecycle, store benchmarking, and warranty risk analysis.
+A comprehensive ETL (Extract-Transform-Load) data pipeline built with Apache Spark, simulating an end-to-end analytics solution for Apple retail operations. This project ingests dirty, real-world-like transactional data, applies rigorous data quality checks, and produces analytics-ready datasets that power business intelligence across sales performance, product lifecycle, store benchmarking, and warranty risk analysis.
 
 **Scale**: ~1M+ sales transactions | 75+ global stores | 90 products | 30K+ warranty claims  
 **Domain**: Consumer Electronics Retail  
