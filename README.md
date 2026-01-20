@@ -350,6 +350,12 @@ AppleRetailDataPipeline/
 ## Author
 **Musaab Mohammed**
 
+Email: musaabjawed@gmail.com  
+
+LinkedIn: [linkedin.com/in/musaab-jawed-mohammed](https://linkedin.com/in/musaab-jawed-mohammed-99415228b) 
+
+GitHub: [github.com/musaab-exe](https://github.com/musaab-exe)
+
 Built as a portfolio project demonstrating end-to-end data engineering capabilities including:
 
 - Distributed data processing with Apache Spark
