@@ -276,6 +276,8 @@ profile_table(df, table_name, pk_col, cfk_cols, parent_dfs, pfk_cols)
 - Python 3.10+
 - Java 8 or 11 (required by Spark)
 - Apache Spark 4.x (or PySpark installed via pip)
+- plotly.express
+- nbformat 5.X
 
 ### Environment Setup
 
