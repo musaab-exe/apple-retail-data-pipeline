@@ -1,0 +1,4 @@
+data/bronze_ingested
+data/silver_cleaned
+data/gold
+utils/__pycache__

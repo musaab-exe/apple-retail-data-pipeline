@@ -1,3 +1,4 @@
+from pyspark.sql.functions import broadcast
 from pyspark.sql.types import *
 from pyspark.sql.functions import col
 from pyspark.sql import functions as F
@@ -36,7 +37,7 @@ def dup_FK_check(
 ): 
 
     invalid_df = child_df.join(
-        parent_df, 
+        broadcast(parent_df), 
         child_df[child_col]==parent_df[parent_col], 
         'left_anti'
     )
